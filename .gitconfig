@@ -36,3 +36,5 @@ repo = /Users/sirius/.zsh-plugins/zsh-users/zsh-completions
 repo = /Users/sirius/.zsh-plugins/zsh-users/zsh-syntax-highlighting
 [pager]
 branch = false
+[alias]
+publish = "!git push origin $(git branch-name)"
