@@ -1,0 +1,38 @@
+[init]
+defaultBranch = main
+templatedir = ./git-templates
+[user]
+name = Sirius Nottin
+email = 30043962+siriusnottin@users.noreply.github.com
+signingkey = C298AD85801542AE
+[core]
+editor = code --wait
+autocrlf = input
+[credential "https://github.com"]
+helper =
+helper = !/usr/local/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+helper =
+helper = !/usr/local/bin/gh auth git-credential
+[commit]
+gpgsign = true
+[tag]
+gpgsign = true
+[maintenance]
+repo = /Users/sirius/.zsh-plugins/k
+repo = /Users/sirius/.zsh-plugins/ohmyzsh
+repo = /Users/sirius/.zsh-plugins/spaceship-prompt
+repo = /Users/sirius/.zsh-plugins/zsh-autosuggestions
+repo = /Users/sirius/.zsh-plugins/zsh-completions
+repo = /Users/sirius/.zsh-plugins/zsh-nvm
+repo = /Users/sirius/.zsh-plugins/zsh-snap
+repo = /Users/sirius/.zsh-plugins/zsh-syntax-highlighting
+repo = /Users/sirius/.zsh-plugins/lukechilds/zsh-nvm
+repo = /Users/sirius/.zsh-plugins/ohmyzsh/ohmyzsh
+repo = /Users/sirius/.zsh-plugins/spaceship-prompt/spaceship-prompt
+repo = /Users/sirius/.zsh-plugins/supercrabtree/k
+repo = /Users/sirius/.zsh-plugins/zsh-users/zsh-autosuggestions
+repo = /Users/sirius/.zsh-plugins/zsh-users/zsh-completions
+repo = /Users/sirius/.zsh-plugins/zsh-users/zsh-syntax-highlighting
+[pager]
+branch = false
