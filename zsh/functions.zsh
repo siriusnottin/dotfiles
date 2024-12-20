@@ -29,6 +29,18 @@ function forget() {
   history -d $(history | awk 'END{print $1-1}')
 }
 
+# Function to get the root folder if in ~/Projects
+get_project_root() {
+  local dir="$PWD"
+  while [[ "$dir" != "/" && "$dir" != "$HOME" ]]; do
+    if [[ "$dir" == "$HOME/Projects"* ]]; then
+      echo "${dir#$HOME/Projects/}" | cut -d'/' -f1
+      return
+    fi
+    dir=$(dirname "$dir")
+  done
+}
+
 pyenv-brew-relink() {
   rm -f "${HOME}/.pyenv/versions/*-brew"
 
