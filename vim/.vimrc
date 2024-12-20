@@ -15,7 +15,10 @@ set nocompatible
 filetype on
 filetype plugin indent on
 filetype indent on
-syntax on
+syntax enable
+
+set background=dark
+colorscheme solarized
 
 set number
 set relativenumber
