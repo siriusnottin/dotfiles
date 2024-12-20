@@ -1,12 +1,12 @@
 # Source shared configurations
-source ~/os/files/dotfiles/zsh-config/aliases.zsh
-source ~/os/files/dotfiles/zsh-config/functions.zsh
+source ~/os/dotfiles/zsh/aliases.zsh
+source ~/os/dotfiles/zsh/functions.zsh
 
 # Source OS-specific configurations
 if [[ "$OSTYPE" == darwin* ]]; then
-  source ~/os/files/dotfiles/zsh-config/macos.zsh
+  source ~/os/dotfiles/zsh/macos.zsh
 elif [[ "$OSTYPE" == linux* ]]; then
-  source ~/os/files/dotfiles/zsh-config/linux.zsh
+  source ~/os/dotfiles/zsh/linux.zsh
 fi
 
 # detect on which system we are running on (ubuntu or macos)
