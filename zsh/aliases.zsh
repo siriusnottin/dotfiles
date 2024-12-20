@@ -1,5 +1,5 @@
 # Network
-alias ip='ifconfig | grep inet'
+alias ip='ifconfig | grep inet' # TODO: Refactor this to use ip command
 
 # Git
 alias g='git'
