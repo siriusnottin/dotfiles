@@ -6,4 +6,5 @@ alias g='git'
 alias gitlog="git log --stat --pretty=short --graph"
 
 # Misc
-alias sorry="sudo shutdown -h now"
+alias sry="sudo shutdown -h now" # Sorry
+alias e=exit
