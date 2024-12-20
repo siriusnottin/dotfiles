@@ -16,5 +16,3 @@ fi
 # elif [[ -f /usr/bin/sw_vers ]]; then
 #   OS="macos"
 # fi
-
-git config --global init.templatedir "~/os/files/dotfiles/git-templates"

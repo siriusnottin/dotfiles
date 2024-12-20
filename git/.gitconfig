@@ -1,6 +1,6 @@
 [init]
   defaultBranch = main
-	templatedir = ~/os/files/dotfiles/git-templates
+	templatedir = ~/os/dotfiles/git/.git-templates
 [user]
   name = Sirius Nottin
   email = 30043962+siriusnottin@users.noreply.github.com
