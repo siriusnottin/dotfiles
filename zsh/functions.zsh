@@ -40,3 +40,11 @@ pyenv-brew-relink() {
   done
   pyenv rehash
 }
+
+# Expand aliases when pressing space
+expand-alias() {
+  zle _expand_alias
+  zle self-insert
+}
+zle -N expand-alias
+bindkey ' ' expand-alias
