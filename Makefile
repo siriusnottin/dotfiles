@@ -1,5 +1,5 @@
 # Define the directories to be symlinked
-DOTFILES := zsh git
+DOTFILES := zsh git tmux vim
 
 # Default target to add a new dotfile
 .PHONY: add
