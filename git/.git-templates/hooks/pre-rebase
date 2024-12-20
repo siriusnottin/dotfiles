@@ -4,7 +4,7 @@ branch_name=$(git rev-parse --abbrev-ref HEAD)
 
 if [ "$branch_name" = "main" ] || [ "$branch_name" = "master" ]; then
   echo "Error: Rebasing on $branch_name is not allowed!"
-  exit 1 # Abort the rebase
+  exit 1
 else
   echo "Warning: Never use this on public branches!"
 fi
