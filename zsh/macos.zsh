@@ -75,7 +75,7 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 
 alias sed=gsed # use gnu-sed instead of the mac osx sed
 
-export EDITOR="code -w"
+export EDITOR="code --wait"
 alias codi="code-insiders"
 # GitHub
 alias gho="gh repo view -w"

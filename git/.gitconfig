@@ -5,8 +5,6 @@
   name = Sirius Nottin
   email = 30043962+siriusnottin@users.noreply.github.com
   signingkey = C298AD85801542AE
-[core]
-  editor = code --wait
   autocrlf = input
 [credential "https://github.com"]
   helper =
