@@ -1,3 +1,4 @@
-   #!/bin/sh
-   echo "Pull operation blocked by pre-pull hook."
-   exit 1
+#!/usr/bin/env bash
+
+echo "Pull operation blocked by pre-pull hook."
+exit 1
