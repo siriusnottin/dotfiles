@@ -12,6 +12,7 @@ alias cr=code -r
 # Python
 alias python=python3
 alias py=python3
+alias pip=pip3
 
 # Misc
 alias sry="sudo shutdown -h now" # Sorry

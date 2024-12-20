@@ -54,8 +54,19 @@ znap eval brew-shellenv 'brew shellenv'
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-znap function _pyenv pyenv 'eval "$( pyenv init - --no-rehash )"'
-compctl -K _pyenv pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
+  eval "$(pyenv init - --no-rehash)"
+  eval "$(pyenv virtualenv-init -)"
+fi
+znap eval pyenv 'pyenv init --path; pyenv init - --no-rehash; pyenv virtualenv-init -'
+
+# Ensure pip is in the PATH
+export PATH="$HOME/.local/bin:$PATH"
+
+# Ensure Homebrew's bin directory is in the PATH
+export PATH="/usr/local/bin:/opt/homebrew/bin:$PATH"
+
 znap eval pip-completion 'pip completion --zsh'
 
 # NVM

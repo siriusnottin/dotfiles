@@ -48,6 +48,10 @@ pyenv-brew-relink() {
     for p in $i/*; do
       echo $p
       ln -sf $p ${HOME}/.pyenv/versions/${p##/*/}-brew
+      # Link the pip executable
+      if [[ -x "$p/bin/pip" ]]; then
+        ln -sf "$p/bin/pip" "${HOME}/.pyenv/versions/${p##/*/}-brew/bin/pip"
+      fi
     done
   done
   pyenv rehash
