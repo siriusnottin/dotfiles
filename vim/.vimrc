@@ -13,7 +13,7 @@ execute pathogen#infect()
 
 set nocompatible
 filetype on
-filetype plugin on
+filetype plugin indent on
 filetype indent on
 syntax on
 
