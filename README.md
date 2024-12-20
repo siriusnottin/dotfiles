@@ -15,9 +15,30 @@ My process is like this:
 ```bash
 pwd # output: dotfiles/
 git checkout -b feat/add-<dotfile> main
-mv ~/<dotfile> ./
-stow .
+make <dotfile>
 ```
+
+## Makefile Usage
+
+The Makefile is used to automate the process of managing dotfiles. Here are some common commands:
+
+- `make <dotfile>`: Add a new dotfile and symlink it using Stow.
+- `make clean`: Remove all symlinks created by Stow.
+- `make list`: List all available dotfiles.
+- `make help`: Display help information for the Makefile.
+- `make install`: Install all dotfiles by running `stow` on each directory.
+
+## Znap
+
+Znap is a fast Zsh plugin manager that can significantly speed up your shell startup time by compiling your Zsh scripts. It is designed to be simple and efficient, making it a great choice for managing your Zsh plugins and configurations.
+
+### Why Znap?
+
+- **Speed**: Znap compiles your Zsh scripts, which can greatly reduce the time it takes for your shell to start.
+- **Simplicity**: Znap is easy to use and configure, making it accessible for users of all levels.
+- **Efficiency**: By managing your plugins and configurations with Znap, you can keep your `.zshrc` clean and organized.
+
+For more information, visit the [Znap GitHub repository](https://github.com/marlonrichert/zsh-snap).
 
 Go to [issues](https://github.com/siriusnottin/dotfiles/issues) for the list of dotfiles I plan to add.
 
