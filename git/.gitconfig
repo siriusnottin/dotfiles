@@ -1,5 +1,5 @@
 [init]
-  defaultBranch = main
+  defaultBranch = dev
 	templatedir = ~/os/dotfiles/git/.git-templates
 [user]
   name = Sirius Nottin
