@@ -1,34 +1,15 @@
-# Define the directories to be managed by Stow
-DOTFILES := zsh git tmux vim
+.PHONY: stow-all
+stow-all:
+	@echo "Creating symlinks for all dotfiles..."
+	@stow -t $$HOME zsh
+	@stow -t $$HOME git
+	@stow -t $$HOME tmux
+	@stow -t $$HOME --ignore=".vim_runtime" vim
+	@stow -t $$HOME vim/.vim_runtime
+	@echo "All symlinks created successfully!"
 
-# Default target to add a new dotfile
-.PHONY: add
-add:
-	@echo "Usage: make add DOTFILE=<dotfile>"
-	@echo "Example: make add DOTFILE=zsh"
-
-# Target to symlink the specified dotfile
-.PHONY: add-dotfile
-add-dotfile:
-	@stow $(DOTFILE)
-
-# Target to symlink all dotfiles using Stow
-.PHONY: stow
-stow:
-	@for dir in $(DOTFILES); do \
-		stow -t $$HOME $$dir; \
-	done
-
-# Add a new dotfile and symlink it using Stow
-<dotfile>:
-	stow <dotfile>
-
-# Remove all symlinks created by Stow
 .PHONY: clean
 clean:
-	stow -D *
-
-# List all available dotfiles
-.PHONY: list
-list:
-	@stow --no --verbose=2 | grep 'LINK:' | awk '{print $$2}'
+	@echo "Removing all symlinks..."
+	@stow -D -t $$HOME zsh vim git tmux
+	@echo "All symlinks removed!"
