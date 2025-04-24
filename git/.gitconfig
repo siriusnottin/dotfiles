@@ -36,3 +36,11 @@
   branch = false
 [alias]
   publish = "!git push origin $(git branch-name)"
+[core]
+  repositoryformatversion = 0
+  filemode = true
+  bare = false
+  logallrefupdates = true
+  worktree = true
+[include]
+  path = ~/.config/git/config
