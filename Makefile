@@ -1,4 +1,4 @@
-# Define the directories to be symlinked
+# Define the directories to be managed by Stow
 DOTFILES := zsh git tmux vim
 
 # Default target to add a new dotfile
@@ -12,7 +12,7 @@ add:
 add-dotfile:
 	@stow $(DOTFILE)
 
-# Target to symlink zsh and git dotfiles to $HOME
+# Target to symlink all dotfiles using Stow
 .PHONY: stow
 stow:
 	@for dir in $(DOTFILES); do \
