@@ -49,3 +49,17 @@ clean:
 	@stow -D -t $(CONFIG_DIR) *
 	@echo "Removing .zshenv..."
 	@rm -f $(HOME)/.zshenv
+
+.PHONY: list
+list:
+	@echo "Available dotfiles directories:"; \
+	find . -maxdepth 1 -type d \( ! -name . \) -exec basename {} \; | sort
+
+.PHONY: help
+help:
+	@echo "Available commands:"; \
+	echo "  make stow-all       - Create symlinks for all dotfiles"; \
+	echo "  make stow-<dir>     - Create symlinks for a specific directory"; \
+	echo "  make clean          - Remove all symlinks"; \
+	echo "  make list           - List all available dotfiles directories"; \
+	echo "  make help           - Display this help message";

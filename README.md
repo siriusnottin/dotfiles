@@ -22,11 +22,11 @@ make <dotfile>
 
 The Makefile is used to automate the process of managing dotfiles. Here are some common commands:
 
-- `make <dotfile>`: Add a new dotfile and symlink it using Stow.
+- `make stow-all`: Create symlinks for all dotfiles.
+- `make stow-<dir>`: Create symlinks for a specific directory.
 - `make clean`: Remove all symlinks created by Stow.
-- `make list`: List all available dotfiles.
+- `make list`: List all available dotfiles directories.
 - `make help`: Display help information for the Makefile.
-- `make install`: Install all dotfiles by running `stow` on each directory.
 
 ## Znap
 
