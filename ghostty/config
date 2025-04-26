@@ -1,7 +1,7 @@
 font-family = Hack Nerd Font
 
 
-#theme = dark:solarized-dark,light:solarized-light
+theme = dark:Builtin Solarized Dark,light:Builtin Solarized Light
 
 window-width = 80
 window-height = 32
