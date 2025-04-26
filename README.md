@@ -43,3 +43,7 @@ For more information, visit the [Znap GitHub repository](https://github.com/marl
 Go to [issues](https://github.com/siriusnottin/dotfiles/issues) for the list of dotfiles I plan to add.
 
 This repo is part of my [os](https://github.com/siriusnottin/os) project, which is a cli to help me, as the title says, manage my os. It is a work in progress and I will be adding more features as I go along.
+
+> [!NOTE]
+> **Note for later**
+> This website could be a great resource for my dotfiles management: [https://dotfiles.github.io/](https://dotfiles.github.io/)
