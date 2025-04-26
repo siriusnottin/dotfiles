@@ -24,3 +24,16 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 ### Note on `.vimrc.bak`
 
 The file `.vimrc.bak` is a backup of my previous Vim configuration file. All the configurations are now in the `~/.vim_runtime` directory. You can safely ignore this file unless you want to revert to the old configuration.
+
+# Vim Configuration
+
+This folder contains the Vim configuration files. The `.vimrc` file is symlinked to `~/.vim_runtime/my_configs.vim` to extend the `amix/vimrc` setup.
+
+## Structure
+
+- `.vimrc`: Additional configuration file for Vim.
+
+## Notes
+
+- The `Makefile` automates the symlink creation for compatibility with `amix/vimrc`.
+- This structure ensures consistency and clarity across all dotfiles.
