@@ -38,7 +38,7 @@ znap source supercrabtree/k
 omz_plugins=(
   "git"
   "npm"
-  macos
+  "macos"
 )
 
 for plugin in ${omz_plugins[@]}; do
