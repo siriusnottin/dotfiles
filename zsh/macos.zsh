@@ -155,3 +155,12 @@ function br {
     return "$code"
   fi
 }
+
+# fnm
+FNM_PATH="/Users/sirius/Library/Application Support/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/Users/sirius/Library/Application Support/fnm:$PATH"
+  eval "`fnm env`"
+fi
+
+eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
