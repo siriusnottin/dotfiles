@@ -1,0 +1,15 @@
+font-family = Hack Nerd Font
+
+
+#theme = dark:solarized-dark,light:solarized-light
+
+window-width = 80
+window-height = 32
+unfocused-split-opacity = .4
+
+initial-window = false
+copy-on-select = false
+#background-opacity = 0.5
+
+cursor-style = block
+mouse-shift-capture = true
