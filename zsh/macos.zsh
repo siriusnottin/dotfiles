@@ -65,7 +65,7 @@ znap eval pyenv 'pyenv init --path; pyenv init - --no-rehash; pyenv virtualenv-i
 export PATH="$HOME/.local/bin:$PATH"
 
 # Ensure Homebrew's bin directory is in the PATH
-export PATH="/usr/local/bin:/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/opt/python@3.13/libexec/bin:$PATH"
 
 znap eval pip-completion 'pip completion --zsh'
 
