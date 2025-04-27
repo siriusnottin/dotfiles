@@ -8,8 +8,7 @@ window-height = 32
 unfocused-split-opacity = .4
 
 initial-window = false
-copy-on-select = false
-background-opacity = 1
+background-opacity = .98
 
 cursor-style = block
 cursor-style-blink = false
