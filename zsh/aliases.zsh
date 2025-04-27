@@ -7,7 +7,9 @@ alias glb="git log --stat --pretty=short --graph" # git log beautified
 
 # Visual Studio Code
 alias c=code
-alias cr=code -r
+alias cr=code --reuse-window
+alias cs=code --new-window
+alias cst=code --new-window --disable-extensions
 
 # Python
 alias python=python3
