@@ -42,5 +42,3 @@
   bare = false
   logallrefupdates = true
   worktree = true
-[include]
-  path = ~/.config/git/config
