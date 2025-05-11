@@ -39,6 +39,7 @@ omz_plugins=(
   "git"
   "npm"
   "macos"
+  "fzf"
 )
 
 for plugin in ${omz_plugins[@]}; do
