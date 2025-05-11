@@ -1,11 +1,11 @@
 [init]
   defaultBranch = dev
-	templatedir = ~/os/dotfiles/git/.git-templates
+  templatedir = ~/os/dotfiles/git/.git-templates
 [user]
   name = Sirius Nottin
   email = 30043962+siriusnottin@users.noreply.github.com
-  signingkey = C298AD85801542AE
   autocrlf = input
+	signingkey = AF71382EF6D1290B
 [credential "https://github.com"]
   helper =
 	helper = !/opt/homebrew/bin/gh auth git-credential
