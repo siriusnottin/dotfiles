@@ -28,6 +28,10 @@ stow-all:
 # Ghostty
 	@mkdir -p $(CONFIG_DIR)/ghostty
 	@stow -t $(CONFIG_DIR)/ghostty ghostty --no-folding
+# GnuPG
+	@echo "Creating symlinks for gnupg..."
+	@mkdir -p $(HOME)/.gnupg
+	@ln -sf $(abspath gnupg/gpg-agent.conf) $(HOME)/.gnupg/gpg-agent.conf
 	@echo "All symlinks created successfully!"
 
 .PHONY: stow-%
@@ -44,6 +48,11 @@ stow-%:
 			stow -t $(CONFIG_DIR)/git git --no-folding; \
 			echo "Creating symlink for .gitconfig... (git/.gitconfig => ~/.gitconfig)"; \
 			ln -sf $(abspath git/.gitconfig) $(HOME)/.gitconfig; \
+			;; \
+		gnupg) \
+			echo "Creating symlinks for gnupg..."; \
+			mkdir -p $(HOME)/.gnupg; \
+			ln -sf $(abspath gnupg/gpg-agent.conf) $(HOME)/.gnupg/gpg-agent.conf; \
 			;; \
 		*) \
 			echo "Creating symlinks for $*..."; \
