@@ -40,6 +40,7 @@ omz_plugins=(
   "npm"
   "macos"
   "fzf"
+  "aliases"
 )
 
 for plugin in ${omz_plugins[@]}; do
