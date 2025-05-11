@@ -15,6 +15,8 @@ stow-all:
 # Git
 	@mkdir -p $(CONFIG_DIR)/git
 	@stow -t $(CONFIG_DIR)/git git --no-folding
+	@echo "Creating symlink for .gitconfig... (git/.gitconfig => ~/.gitconfig)"
+	@ln -sf $(abspath git/.gitconfig) $(HOME)/.gitconfig
 # Tmux
 	@mkdir -p $(CONFIG_DIR)/tmux
 	@stow -t $(CONFIG_DIR)/tmux tmux --no-folding
@@ -35,6 +37,13 @@ stow-%:
 			echo "Creating symlinks for zsh..."; \
 			mkdir -p $(CONFIG_DIR)/zsh; \
 			stow -t $(CONFIG_DIR)/zsh zsh --no-folding --ignore=.zshenv; \
+			;; \
+		git) \
+			echo "Creating symlinks for git..."; \
+			mkdir -p $(CONFIG_DIR)/git; \
+			stow -t $(CONFIG_DIR)/git git --no-folding; \
+			echo "Creating symlink for .gitconfig... (git/.gitconfig => ~/.gitconfig)"; \
+			ln -sf $(abspath git/.gitconfig) $(HOME)/.gitconfig; \
 			;; \
 		*) \
 			echo "Creating symlinks for $*..."; \
