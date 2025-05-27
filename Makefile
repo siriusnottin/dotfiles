@@ -49,6 +49,13 @@ stow-%:
 			echo "Creating symlink for .gitconfig... (git/.gitconfig => ~/.gitconfig)"; \
 			ln -sf $(abspath git/.gitconfig) $(HOME)/.gitconfig; \
 			;; \
+		vim) \
+			echo "Creating symlinks for vim..."; \
+			echo "Creating symlink for .vim_runtime... (vim/.vimrc => ~/.vim_runtime/my_configs.vim)"; \
+			ln -sf $(abspath vim/.vimrc) $(HOME)/.vim_runtime/my_configs.vim; \
+			echo "Creating symlink for vim config... (vim/** => ~/.vim_runtime/...)"; \
+			stow -t $(HOME)/.vim_runtime vim --no-folding --ignore=.vimrc; \
+			;; \
 		gnupg) \
 			echo "Creating symlinks for gnupg..."; \
 			mkdir -p $(HOME)/.gnupg; \
