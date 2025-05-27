@@ -64,3 +64,21 @@ expand-alias() {
 }
 zle -N expand-alias
 bindkey ' ' expand-alias
+
+# Shared message to display before pull/rebase/fetch
+display_git_safety_message() {
+  echo "[WARNING] Use git pull when you're working on a shared branch and want to incorporate the latest changes without modifying the commit history extensively."
+  echo "⚠️  Use git rebase when you're working on a feature branch and want a clean history. It's great for local branches you're not sharing yet."
+}
+
+# Override the default git command to display safety messages for pull, rebase, and fetch.
+# Use 'command git' to bypass this override and access the default git behavior.
+git_override() {
+  case "$1" in
+    pull|rebase|fetch)
+      display_git_safety_message
+      ;;
+  esac
+  command git "$@"
+}
+alias git='git_override'
