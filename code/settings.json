@@ -1,0 +1,308 @@
+{
+	/*
+	=====================================================
+	================ Default settings ===================
+	=====================================================
+	*/
+	"editor.fontFamily": "Hack Nerd Font, Menlo, Monaco, 'Courier New', monospace",
+	"editor.indentSize": "tabSize",
+	"editor.tabSize": 2,
+	"redhat.telemetry.enabled": false,
+	"window.commandCenter.enabled": true,
+	"window.newWindowDimensions": "inherit",
+	"files.eol": "\n",
+	"files.insertFinalNewline": true,
+	"telemetry.telemetryLevel": "off",
+	"editor.minimap.enabled": false,
+	"editor.renderWhitespace": "trailing",
+	"editor.cursorStyle": "block",
+	"editor.experimentalWhitespaceRendering": "font",
+	"editor.formatOnType": true,
+	"editor.inlineSuggest.syntaxHighlightingEnabled": true,
+	"editor.inlineSuggest.showToolbar": "always",
+	"editor.inlineSuggest.suppressSuggestions": true,
+	"editor.suggest.preview": true,
+	"editor.stickyTabStops": true,
+	"editor.renderControlCharacters": false,
+	"editor.accessibilitySupport": "off",
+	"explorer.confirmDragAndDrop": false,
+	"window.restoreWindows": "preserve",
+	"window.density.editorTabHeight": "compact",
+	"window.nativeTabs": true,
+	"window.newWindowProfile": "Default",
+	"security.promptForLocalFileProtocolHandling": false,
+	"files.exclude": {
+		"**/__pycache__": true,
+		"**/*.zwc": true,
+		"**/.cache": true,
+		"**/.coverage": true,
+		"**/.coverage.*": true,
+		"**/.hypothesis": true,
+		"**/.mypy_cache": true,
+		"**/.nox": true,
+		"**/.pytest_cache": true,
+		"**/.ruff_cache": true,
+		"**/.tox": true
+	},
+	"workbench.preferredLightColorTheme": "Quiet Light",
+	"workbench.preferredHighContrastLightColorTheme": "GitHub Light High Contrast",
+	"workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
+	"workbench.preferredDarkColorTheme": "GitHub Dark Default",
+	"workbench.activityBar.location": "top",
+	"workbench.editor.empty.hint": "hidden",
+	"workbench.editor.editorActionsLocation": "titleBar",
+	"workbench.editor.highlightModifiedTabs": true,
+	"workbench.editor.wrapTabs": true,
+	"workbench.editor.closeEmptyGroups": false,
+	"workbench.editor.enablePreviewFromCodeNavigation": true,
+	"workbench.editor.enablePreviewFromQuickOpen": true,
+	"workbench.editor.pinnedTabSizing": "shrink",
+	"workbench.editor.tabActionCloseVisibility": false,
+	"workbench.experimental.editSessions.enabled": true,
+	/*
+	=====================================================
+	===================== Editor ========================
+	=====================================================
+	*/
+	"workbench.editorAssociations": {
+		"git-rebase-todo": "gitlens.rebase",
+		// "*.md": "vscode.markdown.preview.editor"
+	},
+	"emmet.showSuggestionsAsSnippets": true,
+	"emmet.includeLanguages": {
+		"javascript": "javascriptreact"
+	},
+	"emmet.useInlineCompletions": true,
+	"tailwindCSS.emmetCompletions": true,
+	"reactSnippets.settings.prettierEnabled": true,
+	/*
+	=====================================================
+	=================== Terminal ========================
+	=====================================================
+	*/
+	"terminal.integrated.defaultProfile.osx": "zsh",
+	"terminal.integrated.shellIntegration.enabled": true,
+	"terminal.integrated.profiles.osx": {
+		"iTerm": {
+			"path": "iTerm.app",
+			"args": []
+		}
+	},
+	"terminal.external.osxExec": "iTerm.app",
+	"terminal.integrated.confirmOnExit": "hasChildProcesses",
+	/*
+	=====================================================
+	=================== Formatting ======================
+	=====================================================
+	*/
+	// "[hml, css, javascript]": {
+	// },
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": true,
+	"[python]": {
+		"editor.formatOnType": true,
+		"editor.codeActionsOnSave": {
+			"source.fixAll": "explicit",
+			"source.organizeImports": "explicit",
+		},
+		"editor.defaultFormatter": "charliermarsh.ruff",
+		"editor.tabSize": 4,
+		"editor.indentSize": "tabSize",
+		"python.envFile": "${workspaceFolder}/dev.env"
+	},
+	"[shellscript]": {
+		"editor.defaultFormatter": "foxundermoon.shell-format"
+	},
+	"[gitconfig]": {
+		"editor.formatOnSave": false,
+		"editor.defaultFormatter": null
+	},
+	"[php]": {
+		// "editor.defaultFormatter": "valeryanm.vscode-phpsab",
+	},
+	"phpsab.executablePathCBF": "/Users/sirius/.composer/vendor/bin/phpcbf",
+	"phpsab.executablePathCS": "/Users/sirius/.composer/vendor/bin/phpcs",
+	"phpsab.standard": "WordPress",
+	"prettier.bracketSpacing": false,
+	"prettier.arrowParens": "avoid",
+	"prettier.useTabs": true,
+	"prettier.singleQuote": true,
+	"[jsonc]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"[css]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"[markdown]": {
+		"diffEditor.ignoreTrimWhitespace": false
+	},
+	/*
+	=====================================================
+	======================= Git =========================
+	=====================================================
+	*/
+	"git.terminalGitEditor": true,
+	"git.mergeEditor.enabled": true,
+	"gitlens.defaultDateFormat": null,
+	"gitlens.hovers.currentLine.over": "line",
+	"gitlens.views.branches.avatars": false,
+	"gitlens.views.commits.pullRequests.enabled": false,
+	"gitlens.views.commits.pullRequests.showForBranches": false,
+	"gitlens.experimental.generateCommitMessagePrompt": "Commit messages must have a short description that is less than 50 chars followed by a newline. - Write concisely using an informal tone and avoid specific names from the code. - It must follow the conventional commits specification. - Don't start the short message with a capital.",
+	"gitlens.telemetry.enabled": false,
+	"gitlens.views.branches.branches.layout": "list",
+	"git.enableSmartCommit": true,
+	"gitlens.views.remotes.branches.layout": "list",
+	"gitlens.graph.experimental.minimap.enabled": true,
+	"git.autofetch": true,
+	"git.ignoreRebaseWarning": false,
+	"git.allowForcePush": true,
+	"git.confirmSync": false,
+	"gitlens.views.worktrees.files.layout": "list",
+	"gitlens.views.commits.files.layout": "tree",
+	"gitlens.ai.experimental.model": "vscode",
+	"gitlens.ai.experimental.vscode.model": "copilot:o1",
+	"gitlens.graph.layout": "editor",
+	/*
+	=====================================================
+	=================== Extensions ======================
+	=====================================================
+	*/
+	"github.copilot.enable": {
+		"*": true,
+		"plaintext": false,
+		"markdown": true,
+		"scminput": false
+	},
+	"github.copilot.chat.scopeSelection": true,
+	"github.copilot.chat.search.semanticTextResults": true,
+	"code-runner.enableAppInsights": false,
+	"code-runner.runInTerminal": true,
+	"markdown.extension.completion.enabled": true,
+	"markdown.extension.tableFormatter.normalizeIndentation": true,
+	"markdown.extension.theming.decoration.renderHardLineBreak": true,
+	"markdown.extension.theming.decoration.renderLink": true,
+	"markdown.extension.theming.decoration.renderParagraph": true,
+	"markdown.extension.theming.decoration.renderTrailingSpace": true,
+	"cSpell.language": "en,fr-FR,fr,lorem",
+	"cSpell.userWords": [
+		"Cdiscount",
+		"cloudflare",
+		"nginx",
+		"wordpress"
+	],
+	"npm.keybindingsChangedWarningShown": true,
+	"openinmarked.apppath": "/Applications/Setapp/Marked.app",
+	"projectManager.git.baseFolders": [
+		"/Users/sirius/Projects"
+	],
+	"projectManager.sortList": "Recent",
+	"projectManager.ignoreProjectsWithinProjects": true,
+	"projectManager.showParentFolderInfoOnDuplicates": true,
+	"projectManager.tags": [
+		"coda",
+		"learn",
+		"school",
+		"labs",
+		"work"
+	],
+	"projectManager.git.ignoredFolders": [
+		"node_modules",
+		"out",
+		"typings",
+		"test",
+		".haxelib",
+		"archive"
+	],
+	"projectManager.supportSymlinksOnBaseFolders": true,
+	"projectManager.groupList": true,
+	"vscord.app.privacyMode.enable": true,
+	"diffEditor.experimental.showMoves": true,
+	"diffEditor.renderSideBySide": true,
+	"diffEditor.experimental.useTrueInlineView": true,
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"accessibility.voice.speechLanguage": "fr-FR",
+	"makefile.configureOnOpen": true,
+	"chat.editing.alwaysSaveWithGeneratedChanges": true,
+	"window.customTitleBarVisibility": "auto",
+	"gitlens.views.scm.grouped.views": {
+		"commits": false,
+		"branches": false,
+		"remotes": false,
+		"stashes": false,
+		"tags": false,
+		"worktrees": false,
+		"contributors": false,
+		"repositories": false,
+		"searchAndCompare": false,
+		"launchpad": false
+	},
+	"python.analysis.autoImportCompletions": true,
+	"python.analysis.fixAll": [
+		"source.unusedImports"
+	],
+	"workbench.productIconTheme": "icons-carbon",
+	"workbench.colorTheme": "Solarized Dark",
+	"diffEditor.ignoreTrimWhitespace": true,
+	"colorize.decoration_type": "dot",
+	"vscord.status.details.idle.enabled": false,
+	"vscord.status.problems.enabled": false,
+	"vscord.status.details.enabled": false,
+	"vscord.status.image.large.viewing.text": "",
+	"vscord.status.state.idle.enabled": false,
+	"vscord.status.state.debugging.enabled": false,
+	"vscord.status.image.small.debugging.key": "https://raw.githubusercontent.com/LeonardSSH/vscord/main/assets/icons/{app_id}.png",
+	"vscord.status.image.small.notInFile.text": "",
+	"vscord.status.state.enabled": false,
+	"vscord.status.image.large.debugging.key": "https://raw.githubusercontent.com/LeonardSSH/vscord/main/assets/icons/{app_id}.png",
+	"vscord.status.image.large.debugging.text": "",
+	"vscord.status.image.large.editing.text": "",
+	"vscord.status.image.large.idle.key": "https://raw.githubusercontent.com/LeonardSSH/vscord/main/assets/icons/{app_id}.png",
+	"vscord.status.image.large.idle.text": "",
+	"vscord.status.image.small.editing.key": "",
+	"vscord.status.image.small.viewing.text": "",
+	"vscord.status.image.small.editing.text": "",
+	"vscord.status.image.small.debugging.text": "",
+	"vscord.status.image.large.editing.key": "https://raw.githubusercontent.com/LeonardSSH/vscord/main/assets/icons/{app_id}.png",
+	"vscord.status.image.large.notInFile.key": "https://raw.githubusercontent.com/LeonardSSH/vscord/main/assets/icons/{app_id}.png",
+	"vscord.status.image.large.viewing.key": "https://raw.githubusercontent.com/LeonardSSH/vscord/main/assets/icons/{app_id}.png",
+	"vscord.status.image.small.notInFile.key": "",
+	"vscord.status.image.small.viewing.key": "",
+	"color-highlight.markerType": "dot-after",
+	"dev.containers.dockerPath": "podman",
+	"dev.containers.dockerComposePath": "podman compose",
+	"dev.containers.dockerSocketPath": "/var/folders/vf/zwn1w7d50qdcd9jt6b5b6c_00000gn/T/podman/podman-machine-default-api.sock",
+	"editor.cursorBlinking": "solid",
+	"python.analysis.typeCheckingMode": "standard",
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"workbench.startupEditor": "none",
+	"[vue]": {
+		"editor.defaultFormatter": "Vue.volar"
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"[scss]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.formatOnSaveMode": "modifications",
+	"editor.lineNumbers": "off",
+	"search.showLineNumbers": true,
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"github.copilot.nextEditSuggestions.enabled": true,
+}

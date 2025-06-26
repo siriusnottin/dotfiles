@@ -1,0 +1,53 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+	{
+		"key": "ctrl+shift+up",
+		"command": "workbench.action.toggleMaximizedPanel"
+	},
+	{
+		"key": "alt+cmd+p",
+		"command": "-projectManager.listProjects"
+	},
+	{
+		"key": "alt+cmd+,",
+		"command": "settings.switchToJSON"
+	},
+	{
+		"key": "ctrl+cmd+n",
+		"command": "explorer.newFile"
+	},
+	{
+		"key": "ctrl+cmd+g",
+		"command": "explorer.newFolder"
+	},
+	{
+		"key": "cmd+[Period]",
+		"command": "-breadcrumbs.focus",
+		"when": "breadcrumbsPossible && breadcrumbsVisible"
+	},
+	{
+		"key": "cmd+[Period]",
+		"command": "breadcrumbs.focusAndSelect",
+		"when": "breadcrumbsPossible && breadcrumbsVisible"
+	},
+	{
+		"key": "shift+cmd+[IntlRo]",
+		"command": "-breadcrumbs.focusAndSelect",
+		"when": "breadcrumbsPossible && breadcrumbsVisible"
+	},
+	{
+		"key": "cmd+b",
+		"command": "-markdown.extension.editing.toggleBold",
+		"when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+	},
+	{
+		"key": "cmd+i",
+		"command": "-markdown.extension.editing.toggleItalic",
+		"when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+	},
+	{
+		"key": "alt+s",
+		"command": "-markdown.extension.editing.toggleStrikethrough",
+		"when": "false"
+	}
+]

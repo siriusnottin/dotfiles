@@ -5,6 +5,13 @@ zshenv:
 	@echo "Creating symlink for .zshenv..."
 	@ln -sf $(abspath zsh/.zshenv) $(HOME)/.zshenv
 
+.PHONY: code
+code:
+	@echo "Creating symlinks for VS Code settings and keybindings..."
+	@ln -sf $(abspath code/settings.json) "$(HOME)/Library/Application Support/Code/User/settings.json"
+	@ln -sf $(abspath code/keybindings.json) "$(HOME)/Library/Application Support/Code/User/keybindings.json"
+	@echo "VS Code settings and keybindings symlinked!"
+
 .PHONY: stow-all
 stow-all:
 	@$(MAKE) zshenv
@@ -32,6 +39,8 @@ stow-all:
 	@echo "Creating symlinks for gnupg..."
 	@mkdir -p $(HOME)/.gnupg
 	@ln -sf $(abspath gnupg/gpg-agent.conf) $(HOME)/.gnupg/gpg-agent.conf
+# VS Code
+	@$(MAKE) code
 	@echo "All symlinks created successfully!"
 
 .PHONY: stow-%
