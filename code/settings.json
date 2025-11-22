@@ -231,7 +231,6 @@
 	"projectManager.groupList": true,
 	"vscord.app.privacyMode.enable": true,
 	"diffEditor.experimental.showMoves": true,
-	"diffEditor.renderSideBySide": true,
 	"diffEditor.experimental.useTrueInlineView": true,
 	"typescript.updateImportsOnFileMove.enabled": "always",
 	"accessibility.voice.speechLanguage": "fr-FR",
@@ -305,4 +304,15 @@
 	"search.showLineNumbers": true,
 	"javascript.updateImportsOnFileMove.enabled": "always",
 	"github.copilot.nextEditSuggestions.enabled": true,
+	"chat.tools.terminal.autoApprove": {
+		"npm run build": true,
+		"npm run lint": true,
+		"npx tsc --noEmit": {
+			"approve": true,
+			"matchCommandLine": true
+		}
+	},
+	"gitlens.ai.model": "vscode",
+	"gitlens.ai.vscode.model": "copilot:gpt-4.1",
+	"chat.mcp.gallery.enabled": true
 }
