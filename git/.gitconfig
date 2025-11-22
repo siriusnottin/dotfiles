@@ -13,7 +13,7 @@
   helper =
   helper = !/usr/local/bin/gh auth git-credential
 [commit]
-  gpgsign = true
+	gpgsign = true
 [tag]
   gpgsign = true
 [maintenance]
@@ -42,3 +42,5 @@
   bare = false
   logallrefupdates = true
   worktree = true
+[gpg]
+	program = gpg
