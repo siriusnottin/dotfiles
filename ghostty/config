@@ -25,6 +25,7 @@ macos-titlebar-style=transparent
 keybind = cmd+s>r=reload_config
 keybind = cmd+s>x=close_surface
 keybind = cmd+s>n=new_window
+keybind = global:cmd+opt+y=toggle_quick_terminal
 
 # tabs
 keybind = cmd+s>c=new_tab
