@@ -21,4 +21,3 @@ alias sry="sudo shutdown -h now" # Sorry
 alias e=exit
 
 alias reload="exec $SHELL -l"
-alias docker='podman'

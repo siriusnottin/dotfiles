@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# docker wrapper: forward all args to podman, preserving exit code and stdin/stdout/stderr.
+# Place this file in your dotfiles (e.g. ~/os/dotfiles/zsh/docker) and make it executable.
+# If you need custom behavior (from an alias/function) paste that logic below.
+
+# Detect podman
+PODMAN_BIN="$(command -v podman || true)"
+if [ -z "$PODMAN_BIN" ]; then
+  echo "error: podman not found in PATH" >&2
+  exit 127
+fi
+
+# Forward to podman
+exec "$PODMAN_BIN" "$@"
