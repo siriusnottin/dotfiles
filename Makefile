@@ -4,6 +4,16 @@ CONFIG_DIR := $(HOME)/.config
 zshenv:
 	@echo "Creating symlink for .zshenv..."
 	@ln -sf $(abspath zsh/.zshenv) $(HOME)/.zshenv
+	@echo "Creating symlink for .zprofile..."
+	@ln -sf $(abspath zsh/.zprofile) $(HOME)/.zprofile
+	@echo "Creating symlink for .profile..."
+	@ln -sf $(abspath zsh/.zprofile) $(HOME)/.profile
+	@echo "Creating symlink for .bash_profile..."
+	@ln -sf $(abspath zsh/.zprofile) $(HOME)/.bash_profile
+	@echo "Creating symlink for .bashrc..."
+	@ln -sf $(abspath bash/.bashrc) $(HOME)/.bashrc
+	@echo "Ensuring $(CONFIG_DIR)/zsh exists..."
+	@mkdir -p $(CONFIG_DIR)/zsh
 
 .PHONY: code
 code:
@@ -15,6 +25,7 @@ code:
 .PHONY: stow-all
 stow-all:
 	@$(MAKE) zshenv
+	@$(MAKE) install-bin
 	@echo "Creating symlinks for all dotfiles..."
 # Zsh
 	@mkdir -p $(CONFIG_DIR)/zsh
@@ -97,3 +108,11 @@ help:
 	echo "  make clean          - Remove all symlinks"; \
 	echo "  make list           - List all available dotfiles directories"; \
 	echo "  make help           - Display this help message";
+
+.PHONY: install-bin
+install-bin:
+	@echo "Installing ~/bin and symlinking docker wrapper..."
+	@mkdir -p $(HOME)/bin
+	@ln -sf $(abspath docker/docker) $(HOME)/bin/docker
+	@chmod +x $(HOME)/bin/docker || true
+	@echo "Installed: $(HOME)/bin/docker"

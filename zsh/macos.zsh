@@ -55,7 +55,7 @@ znap eval brew-shellenv 'brew shellenv'
 # znap eval trellis 'trellis shell-init zsh'
 
 export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+[[ -d $PYENV_ROOT/bin ]] && PYENV_BIN_PRESENT=1 || PYENV_BIN_PRESENT=0
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init --path)"
   eval "$(pyenv init - --no-rehash)"
@@ -63,11 +63,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 znap eval pyenv 'pyenv init --path; pyenv init - --no-rehash; pyenv virtualenv-init -'
 
-# Ensure pip is in the PATH
-export PATH="$HOME/.local/bin:$PATH"
-
-# Ensure Homebrew's bin directory is in the PATH
-export PATH="/opt/homebrew/opt/python@3.13/libexec/bin:$PATH"
+# pip, Homebrew python, and other PATH entries are consolidated later
 
 znap eval pip-completion 'pip completion --zsh'
 
@@ -116,7 +112,7 @@ compdef _nvm nvm
 # eval "$(op completion zsh)"
 # compdef _op op
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+# system path ordering is handled in the consolidated PATH block below
 
 # Home Assistant CLI
 # eval "$(_HASS_CLI_COMPLETE=source_zsh hass-cli)"
@@ -161,8 +157,51 @@ function br {
 # fnm
 FNM_PATH="/Users/sirius/Library/Application Support/fnm"
 if [ -d "$FNM_PATH" ]; then
-  export PATH="/Users/sirius/Library/Application Support/fnm:$PATH"
+  export FNM_PATH
   eval "`fnm env`"
 fi
 
 eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
+
+# Consolidate PATH modifications in one place to keep ordering predictable
+# and avoid multiple scattered `export PATH=...` lines that can reorder
+# or duplicate entries.
+#
+# Ordering rationale (earlier entries win):
+# 1) `$PYENV_ROOT/bin` — if pyenv is active its shims should shadow system
+#    Python when present (important for projects using pyenv-managed Python).
+# 2) `$HOME/.local/bin` — user-installed tools (pipx, user pip installs) should
+#    take precedence over system packages.
+# 3) Homebrew Python shims (`/opt/homebrew/...`) — keep Homebrew-managed
+#    Python tools next so they override system Python but not user-local installs.
+# 4) `$FNM_PATH` — fnm/node shims should come before system node to honor
+#    per-project Node versions.
+# 5) `/usr/local/bin` then system bins — typical system-wide locations last.
+#
+# Implementation notes:
+# - The loop prepends entries only if they are not already present, so the
+#   operation is idempotent and safe to run multiple times.
+# - Empty variables are skipped to avoid adding blank path entries.
+{
+  paths_to_prepend=(
+    "$HOME/bin"
+    "$PYENV_ROOT/bin"
+    "$HOME/.local/bin"
+    "/opt/homebrew/opt/python@3.13/libexec/bin"
+    "$FNM_PATH"
+    "/usr/local/bin"
+    "/usr/bin"
+    "/bin"
+    "/usr/sbin"
+    "/sbin"
+  )
+
+  for p in "${paths_to_prepend[@]}"; do
+    [ -z "$p" ] && continue
+    case ":$PATH:" in
+      *":$p:"*) ;;           # already present, skip
+      *) PATH="$p:$PATH" ;;  # prepend when missing
+    esac
+  done
+  export PATH
+}
