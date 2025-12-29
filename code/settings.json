@@ -80,7 +80,7 @@
 	=================== Terminal ========================
 	=====================================================
 	*/
-	"terminal.integrated.defaultProfile.osx": "zsh",
+	"terminal.integrated.defaultProfile.osx": "bash",
 	"terminal.integrated.shellIntegration.enabled": true,
 	"terminal.integrated.profiles.osx": {
 		"iTerm": {
