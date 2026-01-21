@@ -163,6 +163,12 @@ fi
 
 eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
 
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+export BUN_INSTALL="$HOME/.bun"
+
+
 # Consolidate PATH modifications in one place to keep ordering predictable
 # and avoid multiple scattered `export PATH=...` lines that can reorder
 # or duplicate entries.
@@ -184,6 +190,7 @@ eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
 # - Empty variables are skipped to avoid adding blank path entries.
 {
   paths_to_prepend=(
+    "$BUN_INSTALL/bin"
     "$HOME/bin"
     "$PYENV_ROOT/bin"
     "$HOME/.local/bin"
